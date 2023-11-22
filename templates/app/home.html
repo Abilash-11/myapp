@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+
+      background-color: aquamarine;
+    margin: 0;
+    height: 100vh; /* Set body height to the full viewport height */
+    display: grid;
+    place-items: center; /* Center content both horizontally and vertically */
+    
+    
+}
+
+    
+img {
+  height: 150%;
+  width: 150%;
+  padding: 5px black;
+  background-origin: 20px;
+  width: 75;
+  height: 75;
+}
+
+
+.image-grid {
+ 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  
+}
+h5{
+  color: #000;
+  text-align: center;
+}
+
+label{
+  text-align: center;
+}
+.grid-item{
+  height: 50%;
+  width: 50%;
+  
+  padding-left: 50px;
+}
+
+  </style>
+  <title>Center and Grid</title>
+</head>
+<body>
+    <!-- template.html -->
+
+
+
+  <div class="center-container">
+    <div class="image-grid">
+      <div class="grid-item">
+        
+        <a href="/user"><img src="{% static 'images/user.jpg' %}" alt="USER"></a><br><br>
+        <h5>USER</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="/usertype"><img src="{% static 'images/type.jpg' %}" alt="USERTYPE"></a><br><br>
+        <h5>USERTYPE</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="/item_register"><img src="{% static 'images/items.jpg' %}" alt="ITEMS_REGISTER"></a><br><br>
+        <h5>ITEMS REGISTER</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="/table_reg"><img src="{% static 'images/table.jpg' %}" alt="TABLE REGISTER"></a><br><br>
+        <h5>TABLE REGISTER</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="/rows"><img src="{% static 'images/billing.png' %}" alt="table_bill"></a><br><br>
+        <h5>TABLE BILL</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="{% url 'billcounter'%}"><img src="{% static 'images/billing.png' %}" alt="BILL_COUNTER"></a><br><br>
+        <h5>BILL COUNTER</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="{% url 'kitchen' %}"><img src="{% static 'images/kitchen.jpg' %}" alt="KITCHEN"></a><br><br>
+        <h5>KITCHEN</h5>
+        
+      </div>
+      <div class="grid-item">
+        <a href="{% url 'daybill' %}"><img src="{% static 'images/billing.png' %}" alt="DayBill"></a><br><br>
+        <h5>DAY BILL</h5>
+        
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

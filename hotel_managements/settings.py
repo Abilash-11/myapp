@@ -12,6 +12,23 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+from dotenv import load_dotenv
+import dj_database_url
+# from environ import Env
+from decouple import config
+
+DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = config('SECRET_KEY')
+DATABASE_URL = config('DATABASE_URL', default='postgres://management_postgres_user:0AqPF9yTDDSPFYMt8cW7DD5D9kFI3lFV@dpg-clf14ol3qkas73b1e8p0-a.singapore-postgres.render.com/management_postgres')
+
+ 
+
+# Load environment variables from .env
+load_dotenv()
+
+# Use the variables in your settings
+
+# DATABASE_URL = os.getenv('DATABASE_URL')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,9 +43,9 @@ print(os.path.join(BASE_DIR, 'static'))
 SECRET_KEY = 'django-insecure-4q_7j14ev*@-66imo54-g8*-rk!kj7k03t9=6d1%gnh-r&dk4m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,6 +103,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES['default'] = dj_database_url.parse(env('DATABASES_URL'))
 
 
 # Password validation
